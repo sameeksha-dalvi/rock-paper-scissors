@@ -18,6 +18,12 @@ function getComputerChoice(){
 
 
 
+//function to get user choice
+
+function getHumanChoice(){
+    let userChoice = prompt("Please enter your choice.");
+    console.log("User Input : "+userChoice);
+}
 
 
 
