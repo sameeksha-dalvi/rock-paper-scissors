@@ -43,38 +43,61 @@ console.log(" compChoice "+ compChoice);
  let message ="";
 if(humanChoice === 'rock' && compChoice === 'scissors'){
      message = "Rock beats scissors !";
-    humanScore++;
+     //humanScore = humanScore++;
+     humanScore++;
 }else if(humanChoice === 'paper' && compChoice ==='rock' ){
     message = "Paper beats rock !";
+    //humanScore = humanScore++;
     humanScore++;
 }else if( humanChoice === 'scissors' && compChoice ==='paper'){
    message = "Scissors beat paper !";
-    humanScore++;
+   //humanScore = humanScore++;
+   humanScore++;
 }else if(humanChoice === 'rock' && compChoice ==='paper' ){
     message = "Paper beats rock !";
+    //computerScore = computerScore++;
     computerScore++;
 }else if(humanChoice === 'paper' && compChoice ==='scissors' ){
     message = "Scissors beat paper !";
+    //computerScore = computerScore++;
     computerScore++;
 }else if(humanChoice === 'scissors' && compChoice ==='rock' ){
     message = "Rock beats scissors !";
+    //computerScore = computerScore++;
     computerScore++;
 }
+
 
 console.log(" Human Score : "+ humanScore);
 console.log(" Computer Score : "+ computerScore);
 
-if(humanScore > computerScore){
-    console.log("You Win! "+message);
-}else if(humanScore < computerScore){
-    console.log("You Lose! "+message);
-}else{
-    console.log("It's a Tie");
-}
 
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
-playRound(humanSelection,computerSelection);
+
+
+
+function playGame(){
+
+    for(let i= 0 ; i < 5 ; i++){
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection,computerSelection);
+    }
+
+
+console.log(" Human Score final: "+ humanScore);
+console.log(" Computer Score final: "+ computerScore);
+
+    if(humanScore > computerScore){
+        console.log("You Win!");
+    }else if(humanScore < computerScore){
+        console.log("You Lose!");
+    }else{
+        console.log("It's a Tie");
+    }
+}
+
+
+playGame();
