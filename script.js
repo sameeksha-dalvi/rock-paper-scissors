@@ -1,4 +1,10 @@
 
+
+//declare global variables to keep stack of score
+
+let humanScore = 0;
+let computerScore = 0;
+
 //function to get random rock , paper or scissors
 
 function getComputerChoice(){
@@ -22,7 +28,7 @@ function getComputerChoice(){
 
 function getHumanChoice(){
     let userChoice = prompt("Please enter your choice.");
-    console.log("User Input : "+userChoice);
+    //console.log("User Input : "+userChoice);
 }
 
 
