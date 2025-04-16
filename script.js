@@ -61,6 +61,33 @@ function playRound(humanChoice, compChoice) {
         computerScore++;
     }
 
+    
+
+    const resultSect = document.querySelector(".result-section");
+
+    if (resultSect.hasChildNodes()) {
+        resultSect.removeChild(resultSect.firstChild);
+    }
+
+    const currentScore = document.createElement("div");
+    currentScore.setAttribute("class", "current-score");
+
+    const currentHumanScore = document.createElement("p");
+    currentHumanScore.setAttribute("class", "curr-human-score");
+    currentHumanScore.textContent = "Your Score is : " + humanScore;
+
+    const currentComputerScore = document.createElement("p");
+    currentComputerScore.setAttribute("class", "curr-comp-score");
+    currentComputerScore.textContent = "Computer's Score is : " + computerScore;
+
+    currentScore.appendChild(currentHumanScore);
+    currentScore.appendChild(currentComputerScore);
+
+
+    resultSect.appendChild(currentScore);
+
+
+
 
     console.log(" Human Score : " + humanScore);
     console.log(" Computer Score : " + computerScore);
@@ -70,7 +97,7 @@ function playRound(humanChoice, compChoice) {
 
 const userSelectionBtn = document.querySelector(".user-input");
 
-userSelectionBtn.addEventListener('click',(event) => {
+userSelectionBtn.addEventListener('click', (event) => {
     const humanSelection = event.target.textContent;
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
