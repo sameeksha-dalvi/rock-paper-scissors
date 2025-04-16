@@ -2,28 +2,35 @@ body{
     background-color: #1e1e2f;
     color: white;
     min-height: 100vh;
+    font-family: 'Times New Roman', Times, serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px dotted rgb(96 139 168);
+    
 }
 
-/* #rock{
-    background-image: url(images/rock.png);
-    width: 100px;
-    height: 100px;
-} */
 
-/* .main-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
+ button{
+    width: 200px;
+    height: 100px;
+    border-radius: 15px;
+    background-color: rgb(49, 62, 88);
+} 
+
+img{
+    width: 70px;
+}
+
+.main-container{
+    font-size: 30px;
+} 
 
 footer{
     display: flex;
     justify-content: center;
+    bottom: 0;
+    position: fixed;
+    margin: 10px;
 }
 
