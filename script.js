@@ -57,6 +57,7 @@ function playRound(humanChoice, compChoice) {
     showSelection.appendChild(currentHumanChoice);
     showSelection.appendChild(currentComputerChoice);
 
+
     let message = "";
     if (humanChoice === 'rock' && compChoice === 'scissors') {
         message = "Rock beats scissors !";
@@ -115,7 +116,15 @@ function playRound(humanChoice, compChoice) {
 const userSelectionBtn = document.querySelector(".user-input");
 
 userSelectionBtn.addEventListener('click', (event) => {
-    const humanSelection = event.target.textContent;
+    let humanSelection ="";
+    if(event.target.alt !="" && event.target.alt !=undefined){
+         humanSelection = event.target.alt;
+    }else{
+        humanSelection = event.target.id;
+    }
+    console.log(event.target.alt);
+    console.log(event.target.id);
+    
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
 });
