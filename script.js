@@ -40,6 +40,23 @@ function playRound(humanChoice, compChoice) {
     console.log(" humanChoice " + humanChoice);
     console.log(" compChoice " + compChoice);
 
+    const showSelection = document.querySelector(".show-selection");
+
+    if (showSelection.hasChildNodes()) {
+        showSelection.textContent = "";
+    }
+
+    const currentHumanChoice = document.createElement("div");
+    currentHumanChoice.setAttribute("id", "curr-human-choice");
+    currentHumanChoice.textContent = "Your Choice : " + humanChoice;
+
+    const currentComputerChoice = document.createElement("div");
+    currentComputerChoice.setAttribute("id", "curr-comp-choice");
+    currentComputerChoice.textContent = "Computer's Choice : " + compChoice;
+
+    showSelection.appendChild(currentHumanChoice);
+    showSelection.appendChild(currentComputerChoice);
+
     let message = "";
     if (humanChoice === 'rock' && compChoice === 'scissors') {
         message = "Rock beats scissors !";
@@ -61,12 +78,12 @@ function playRound(humanChoice, compChoice) {
         computerScore++;
     }
 
-    
+
 
     const resultSect = document.querySelector(".result-section");
 
     if (resultSect.hasChildNodes()) {
-        resultSect.removeChild(resultSect.firstChild);
+        resultSect.textContent = "";
     }
 
     const currentScore = document.createElement("div");
