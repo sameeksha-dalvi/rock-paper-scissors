@@ -68,6 +68,13 @@ function playRound(humanChoice, compChoice) {
 
 }
 
+const userSelectionBtn = document.querySelector(".user-input");
+
+userSelectionBtn.addEventListener('click',(event) => {
+    const humanSelection = event.target.textContent;
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+});
 
 // function playGame() {
 
